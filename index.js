@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const routes = require("./routes");
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
@@ -9,6 +10,12 @@ app.use(express.json());
 
 // Middleware for parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: "http://localhost:5173", // or your frontend URL
+    credentials: true, // if you're using cookies
+  })
+);
 // Routes
 app.use("/api", routes);
 
