@@ -18,7 +18,8 @@ app.use(
       "https://dynamicecom-f.vercel.app",
       "http://127.0.0.1:3002",
       "http://127.0.0.1:3001",
-      "http://127.0.0.1:3000"
+      "http://127.0.0.1:3000",
+      "https://ddc9833g-5173.inc1.devtunnels.ms"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
