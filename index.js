@@ -12,8 +12,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "https://dynamicecom-f.vercel.app", "http://127.0.0.1:3002", "http://127.0.0.1:3001", "http://127.0.0.1:3000"], // or your frontend URL
-    credentials: true, // if you're using cookies
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://dynamicecom-f.vercel.app",
+      "http://127.0.0.1:3002",
+      "http://127.0.0.1:3001",
+      "http://127.0.0.1:3000"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Add custom headers if used
   })
 );
 // Routes
